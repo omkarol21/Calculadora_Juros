@@ -1,0 +1,85 @@
+:root {
+    --cor-fundo: #84B6F4;
+    --cor-rosa: #fe86c1;  
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family:'Concert One' ;
+    font-size: 50px;
+    color: var(--cor-rosa);
+    text-align: center;
+    text-shadow: 0.1em 0.1em 0.3em white;
+    margin-bottom: 30px;
+    margin-top: 4%;
+}
+
+body{
+    background-color: var(--cor-fundo);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+#calculadora{
+    padding: 30px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.50);
+    border-radius: 15px; 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.50);
+}
+
+label{
+    margin-top: 9px;
+}
+
+#preencher{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.retangulo{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    height: 25px;
+    width: 380px;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.retangulo:focus{
+    outline: none;
+}
+
+.text{
+    font-family:'Concert One' ; 
+    font-size: 30px;
+    color: var(--cor-rosa);
+    margin-top: 5px;
+}
+
+#text{
+    margin-bottom: 25px;
+}
+
+.btn{
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+    background-color: var(--cor-rosa);
+    font-weight: bold;
+    cursor: pointer;
+}

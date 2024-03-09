@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <!-- Links das fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <title>Calculadora de juros</title>
+</head>
+
+<body>
+
+    <div style="display: flex;
+        justify-content: center;">
+        <h1>Calculadora</h1>
+        <img style="height: 155px;" src="./assets/img/ilustracao.png" alt="">
+    </div>
+    
+
+    <main>
+        <div id="calculadora">
+            <div id="preencher">
+                <label for="capital">Informe o valor do capital(R$): </label>
+                <input type="number" required class="retangulo" id="capital" value="" step=".01">
+
+                <label for="taxa">Informe a taxa de juros(%): </label>
+                <input type="number" required class="retangulo" id="taxa" value="" step=".01">
+
+                <label for="tempo">Informe o tempo de aplicação(meses): </label>
+                <input type="number" required class="retangulo" id="tempo" value="" step=".01">
+
+                <p class="text">Resultado:</p>
+                <p class="text" id="text"></p>
+            </div>
+
+            <div id="button" style="display: flex;
+                justify-content: center;
+                gap: 10px;">
+                <button class="btn" id="simples">Calcular juros simples</button>
+                <button class="btn" id="composto">Calcular juros composto</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var c = document.getElementById("capital")
+        var i = document.getElementById("taxa")
+        var t = document.getElementById("tempo")
+        var Bsimples = document.getElementById("simples")
+        var Bcomposto = document.getElementById("composto")
+
+        function JSimples() {
+            document.getElementById("text").innerHTML = parseFloat(c.value) + (c.value * (i.value/100) * t.value)
+        }
+
+        function JComposto() {
+            document.getElementById("text").innerHTML = ((parseFloat(c.value) * ((1 + (i.value/100)) ** t.value)).toFixed(2)).replace('.', ',');
+        }
+
+        Bsimples.addEventListener("click", JSimples)
+        Bcomposto.addEventListener("click", JComposto)
+    </script>
+</body>
+
+</html>
